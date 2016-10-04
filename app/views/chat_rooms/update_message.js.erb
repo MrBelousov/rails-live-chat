@@ -1,0 +1,1 @@
+$('#edit-message-<%= @message.id.to_s %>').html("<%= j (render partial: 'messages/form', locals: { message: @message, chat_room: @chat_room }) %>");

@@ -1,0 +1,9 @@
+<%= form_for message, url: '#', remote: true do |f| %>
+    <%= hidden_field_tag 'chat_room_id', chat_room.id %>
+    <div class="form-group">
+      <%= f.text_area :body, class: 'form-control', placeholder: 'Enter your message text..' %>
+      <small class="text-muted">From 2 to 1000 characters</small>
+    </div>
+
+    <%= f.submit 'Send', class: 'btn btn-primary btn-sma' %>
+<% end %>

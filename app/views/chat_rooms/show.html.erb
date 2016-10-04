@@ -1,0 +1,9 @@
+<h1 class="card-header"><%= chat_room.title %></h1>
+
+<div id="messages" data-chat-room-id="<%= chat_room.id %>">
+  <%= render chat_room.messages %>
+</div>
+
+<hr>
+
+<%= render partial: 'messages/form', locals: { chat_room: chat_room, message: message } %>

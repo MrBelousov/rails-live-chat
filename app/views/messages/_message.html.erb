@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-1">
+        <%= gravatar_for message.user %>
+      </div>
+      <div class="col-md-9" id="edit-message-<%= message.id %>">
+        <p class="card-text">
+          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
+          <%= message.body %>
+        </p>
+      </div>
+      <div class="col-md-1">
+        <%= form_for message, url: '#', html: { method: 'delete', id: 'destroy-message' }, remote: true do %>
+          <%= hidden_field_tag 'message_id', message.id %>
+          <%= button_tag(class: 'btn btn-sm btn-outline-danger') do %>
+            <%= fa_icon 'trash-o' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
